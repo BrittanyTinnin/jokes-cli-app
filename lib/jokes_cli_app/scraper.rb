@@ -13,6 +13,7 @@ class Scraper
   def self.scrape_category_details(category)
     page = Nokogiri::HTML(open("http://jokes.cc.com/"))
 
+
   end
 
 end

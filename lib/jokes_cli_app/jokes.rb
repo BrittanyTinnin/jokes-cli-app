@@ -1,12 +1,11 @@
 class Jokes
-  attr_accessor :link, :title, :url
+  attr_accessor :link, :title
 
   @@all = []
 
-  def initialize(title, link, url)
+  def initialize(title, link)
     @title = title
     @link = link
-    @url = url
     @@all << self
   end
 
