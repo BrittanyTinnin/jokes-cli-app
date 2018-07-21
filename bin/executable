@@ -3,4 +3,4 @@
 
 require_relative '../lib/environment'
 
-CLI.new("Jokes").start
+CLI.new.start
