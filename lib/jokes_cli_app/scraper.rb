@@ -1,7 +1,11 @@
 class Scraper
 
   def self.scrape_category
-    html = open("http://jokes.cc.com/")
+    page = Nokogiri::HTML(open("http://jokes.cc.com/"))
+    page.css("ul.list_horiz li").each do |category|
+
+      binding.pry
+    end
   end
 
 end
