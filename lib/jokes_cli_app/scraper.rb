@@ -6,12 +6,15 @@ class Scraper
       link = category.css("a").attribute("href").text
       title = category.css("a").text
       joke = Jokes.new(title, link)
-      # binding.pry
     end
   end
 
   def self.scrape_category_details(category)
-    page = Nokogiri::HTML(open("http://jokes.cc.com/"))
+    page = Nokogiri::HTML(open(category.link))
+    page.css("div.middle ul li").each do |list|
+      # title = list.text
+      binding.pry
+    end
 
 
   end
