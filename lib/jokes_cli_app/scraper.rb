@@ -11,12 +11,10 @@ class Scraper
 
   def self.scrape_category_details(category)
     page = Nokogiri::HTML(open(category.link))
-    # page.css("div.middle ul li").each do |list|
-    #   # title = list.text
-    #   # binding.pry
-    # end
-
-
+    page.css("div.middle ul li").each do |list|
+      # url = list.css("a").attribute("href").text
+      binding.pry
+    end
   end
 
 end
