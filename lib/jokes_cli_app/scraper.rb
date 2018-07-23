@@ -2,7 +2,7 @@ class JokesCliApp::Scraper
 
   def self.scrape_category
     page = Nokogiri::HTML(open("http://jokes.cc.com/"))
-    page.css("div.middle ul li").each do |category|
+    page.css("div.middle ul li")[0..14].each do |category|
       link = category.css("a").attribute("href").text
       title = category.css("a").text
       joke = JokesCliApp::Category.new(title, link)
