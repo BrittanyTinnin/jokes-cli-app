@@ -18,13 +18,7 @@ class JokesCliApp::Scraper
       joke_obj = JokesCliApp::Joke.new(title, link)
 
       category_object.add_joke(joke_obj)
-
     end
-
-
-      # title = item.css("h3").text
-      # link = item.css("a").attribute("href").text
-      # sub_joke = JokesCliApp::Jokes.new(title, link)
   end
   # def self.scrape_subcat_details(category)
   #
