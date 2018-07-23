@@ -9,12 +9,17 @@ class Scraper
     end
   end
 
-  def self.scrape_category_details(category)
-    page = Nokogiri::HTML(open(category.link))
-    page.css("div.middle ul li").each do |list|
-      # url = list.css("a").attribute("href").text
-      binding.pry
+  def self.scrape_subcategory(category)
+    page_two = Nokogiri::HTML(open(category.link))
+    page_two.css("div.module_content .middle ul li").each do |item|
+      title = item.css("h3").text
+      link = item.css("a").attribute("href").text
+      sub_joke = Jokes.new(title, link)
+      # binding.pry
     end
   end
 
+  def self.scrape_subcat_details(category)
+
+  end
 end

@@ -23,7 +23,10 @@ class CLI
       if input.to_i.between?(1, Jokes.all.size)
         index = input.to_i - 1
         category = Jokes.all[index]
-        Scraper.scrape_category_details(category)
+        #how do I use method below to select/display the new list of category
+        #once that is listed, select the cate and read the joke
+        Scraper.scrape_subcategory(category)
+        Scraper.scrape_subcat_details(category)
         display_details(category)
       else
         puts "See ya, wouldn't wanna be ya!"
