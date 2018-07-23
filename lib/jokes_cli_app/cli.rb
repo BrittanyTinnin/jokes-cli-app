@@ -1,8 +1,9 @@
 class JokesCliApp::CLI
 
   def start
-    puts "Loading...."
     puts "Welcome to Jokes for Fun!"
+    puts ""
+    puts "Why so serious!? Let's put a smile on that face!"
     JokesCliApp::Scraper.scrape_category
     menu
   end
@@ -12,7 +13,9 @@ class JokesCliApp::CLI
     input = ""
 
     until input == "exit"
-      puts "Please, select a number for the Jokes category. However, if you can't take a joke, type exit please."
+      puts ""
+      puts "Please select a number for the Jokes category. However, if you can't take a joke, type exit please."
+      puts ""
       jokes = JokesCliApp::Category.all
       jokes.each.with_index(1) do |cate, index|
         puts "#{index}. #{cate.title}"
@@ -26,6 +29,7 @@ class JokesCliApp::CLI
         JokesCliApp::Scraper.scrape_subcategory(category_details)
         display_details(category_details)
       else
+
         puts "See ya, wouldn't wanna be ya!"
       end
     end
@@ -38,14 +42,27 @@ class JokesCliApp::CLI
       puts "#{index}. #{joke.title}"
     end
 
-    puts "Please enter a number for a joke to see the content"
+    puts "Please enter a number for a joke, and watch that frown turn upside down!"
 
     input = gets.strip
     index = input.to_i - 1
 
     joke = category_details.joke_list[index]
+    # binding.pry
     # call on the scraper to scrape the content for that individual joke
-    Scraper.scrape_joke_content(joke)
+    JokesCliApp::Scraper.scrape_joke_content(joke)
+
+    puts "#{joke.content}"
+
+    puts ""
+
+    puts "Would you like to laugh again? yes or exit"
+    input = gets.strip
+    if input == "yes"
+      JokesCliApp::Scraper.scrape_category
+    elsif input == "exit"
+      # puts "See ya, wouldn't wanna be ya!"
+    end
   end
 
 end

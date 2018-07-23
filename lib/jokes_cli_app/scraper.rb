@@ -10,7 +10,6 @@ class JokesCliApp::Scraper
   end
 
   def self.scrape_subcategory(category_object)
-    collection = []
     page_two = Nokogiri::HTML(open(category_object.link))
     page_two.css("div.module_content .middle ul li a")[0..9].each do |joke_doc|
       title = joke_doc.text
@@ -20,7 +19,10 @@ class JokesCliApp::Scraper
       category_object.add_joke(joke_obj)
     end
   end
-  # def self.scrape_subcat_details(category)
-  #
-  # end
+
+  def self.scrape_joke_content(joke)
+    page_three = Nokogiri::HTML(open(joke.link))
+    joke.content = page_three.css("div.content_wrap p").text
+    # binding.pry
+  end
 end
