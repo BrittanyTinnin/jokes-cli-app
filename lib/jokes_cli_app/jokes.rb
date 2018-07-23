@@ -1,4 +1,4 @@
-class Jokes
+class JokesCliApp::Jokes
   attr_accessor :link, :title
 
   @@all = []
@@ -12,7 +12,5 @@ class Jokes
   def self.all
     @@all
   end
-
-
 
 end
