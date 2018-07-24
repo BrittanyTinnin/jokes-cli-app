@@ -12,7 +12,6 @@ class JokesCliApp::CLI
   def menu
     input = ""
 
-
       puts ""
       puts "Please select a number for the Jokes category."
       puts "But...if you can't take a joke, type exit please."
@@ -29,8 +28,7 @@ class JokesCliApp::CLI
         category_details = JokesCliApp::Category.all[index]
         JokesCliApp::Scraper.scrape_subcategory(category_details)
         display_details(category_details)
-        # sub_menu
-        # menu_two
+
       elsif input == "exit"
         puts ""
         puts "Aww...too bad :("
@@ -47,9 +45,7 @@ class JokesCliApp::CLI
     category_details.joke_list.each.with_index(1) do |joke, index|
       puts "#{index}. #{joke.title}"
     end
-  # end
 
-  # def sub_menu
     puts ""
     puts "Please enter a number for a joke, and watch that frown turn upside down!"
     puts "Type exit to exit.... I Dare Ya!"
@@ -60,9 +56,6 @@ class JokesCliApp::CLI
     else
       index = input.to_i - 1
 
-  # end
-  #
-  # def menu_two
     joke = category_details.joke_list[index]
     puts ""
     JokesCliApp::Scraper.scrape_joke_content(joke)

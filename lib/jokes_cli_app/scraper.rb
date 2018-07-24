@@ -23,6 +23,5 @@ class JokesCliApp::Scraper
   def self.scrape_joke_content(joke)
     page_three = Nokogiri::HTML(open(joke.link))
     joke.content = page_three.css("div.content_wrap p").text
-    # binding.pry
   end
 end
