@@ -1,4 +1,5 @@
 class JokesCliApp::Category
+
   attr_accessor :link, :title, :joke_list
 
   @@all = []

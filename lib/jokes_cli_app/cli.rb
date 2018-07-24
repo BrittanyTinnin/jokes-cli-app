@@ -36,6 +36,7 @@ class JokesCliApp::CLI
       else
         puts "That's not quite right... try again."
         puts ""
+        menu
       end
   end
 
