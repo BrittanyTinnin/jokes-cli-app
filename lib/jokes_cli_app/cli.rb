@@ -53,10 +53,16 @@ class JokesCliApp::CLI
     input = gets.strip
     if input == "exit"
       puts "Is it that time already? Until we meet again!"
-    else
+    elsif input.to_i > 0 && input.to_i < category_details.joke_list.size
       index = input.to_i - 1
+      display_joke(category_details.joke_list[index])
+    else
+      puts "Please select a valid option."
+      display_details(category_details)
+    end
+  end
 
-    joke = category_details.joke_list[index]
+  def display_joke(joke)
     puts ""
     JokesCliApp::Scraper.scrape_joke_content(joke)
     puts ""
@@ -69,6 +75,6 @@ class JokesCliApp::CLI
       else
         menu
       end
-    end
   end
+
 end
