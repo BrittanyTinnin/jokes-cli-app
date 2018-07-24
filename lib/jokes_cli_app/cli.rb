@@ -62,7 +62,7 @@ class JokesCliApp::CLI
     puts ""
     puts "#{joke.content}"
     puts ""
-    puts "Would you like to laugh again? Press enter to continue or type exit."
+    puts "Would you like to laugh again? Press enter or any key to continue or type exit."
     input = gets.strip
       if input == "exit"
         puts "See ya later, Batsy!"
