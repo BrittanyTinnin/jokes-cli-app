@@ -54,7 +54,7 @@ class JokesCliApp::CLI
     input = gets.strip
     if input == "exit"
       puts "Is it that time already? Until we meet again!"
-    elsif input.to_i > 0 && input.to_i < category_details.joke_list.size
+    elsif input.to_i > 0 && input.to_i <= category_details.joke_list.size
       index = input.to_i - 1
       display_joke(category_details.joke_list[index])
     else
