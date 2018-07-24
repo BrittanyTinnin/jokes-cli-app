@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run: jokes_cli_app after installing the gem
 
 ## Development
 

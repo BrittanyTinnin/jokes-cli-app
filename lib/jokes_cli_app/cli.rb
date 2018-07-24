@@ -52,10 +52,11 @@ class JokesCliApp::CLI
   # def sub_menu
     puts ""
     puts "Please enter a number for a joke, and watch that frown turn upside down!"
+    puts "Type exit to exit.... I Dare Ya!"
 
     input = gets.strip
     if input == "exit"
-      puts "Goodbye!"
+      puts "Is it that time already? Until we meet again!"
     else
       index = input.to_i - 1
 
@@ -70,17 +71,11 @@ class JokesCliApp::CLI
     puts ""
     puts "Would you like to laugh again? Press any key to continue or type exit."
     input = gets.strip
-    if input == "exit"
-      puts "See ya later, Batsy!"
-      # if input == "yes"
-      #   menu
-      # else
-      #   puts "That's not quite right... try again"
-      #   puts ""
-      # end
-    else
-      menu
+      if input == "exit"
+        puts "See ya later, Batsy!"
+      else
+        menu
+      end
     end
-  end
   end
 end
