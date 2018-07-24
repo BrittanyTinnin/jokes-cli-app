@@ -57,6 +57,7 @@ class JokesCliApp::CLI
       index = input.to_i - 1
       display_joke(category_details.joke_list[index])
     else
+      puts ""
       puts "Please select a valid option."
       display_details(category_details)
     end
